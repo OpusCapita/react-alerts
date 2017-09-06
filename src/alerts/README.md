@@ -1,4 +1,4 @@
-Back to [oc-common-ui](../../README.md)
+Back to [alerts](../../README.md)
 
 # Alerts
 
@@ -8,29 +8,17 @@ Alerts component to show global notifications to the user.
 
 ### Dependencies
 
-react-bootstrap, react-redux, react-intl, lodash
+None
 
 ### Initialization
-
-#### Register to Redux store
-
-```javascript
-import { alertsReducer, OCAlert } from '@opuscapita/oc-common-ui';
-
-combineReducers({
-  alertsReducer,
-});
-
-OCAlert.setStore(store);
-```
 
 #### Include in the DOM
 
 ```jsx
-import { OCAlerts } from '@opuscapita/oc-common-ui';
+import { OCAlertsProvider } from '@opuscapita/react-alerts';
 
 <div id="myApp">
-  <OCAlerts />
+  <OCAlertsProvider />
 </div>
 ```
 
@@ -50,7 +38,7 @@ import { OCAlerts } from '@opuscapita/oc-common-ui';
 ### Code example
 
 ```jsx
-import { OCAlert } from '@opuscapita/oc-common-ui';
+import { OCAlert } from '@opuscapita/react-alerts';
 
 OCAlert.alertSuccess('success');
 OCAlert.alertInfo('info');

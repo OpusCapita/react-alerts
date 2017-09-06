@@ -14,13 +14,11 @@ import { alertsReducer, OCAlert } from '../src/index';
 
 import './app.component.scss';
 
-require('../images/favicon.ico');
-
 
 const composeEnhancers = (process.env.NODE_ENV !== 'production' &&
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-const store = createStore(
+/* const store = createStore(
   combineReducers({
     alertsReducer,
     intl: intlReducer,
@@ -28,14 +26,10 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk)),
 );
 
-OCAlert.setStore(store);
+OCAlert.setStore(store); */
 
 render((
-  <Provider store={store}>
-    <IntlProvider>
-      <Router history={hashHistory}>
-        <Route path="/" component={AlertsView} />
-      </Router>
-    </IntlProvider>
-  </Provider>
+  <Router history={hashHistory}>
+    <Route path="/" component={AlertsView} />
+  </Router>
 ), document.getElementById('oc-examples'));

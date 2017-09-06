@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import { OCAlerts, OCAlert } from '../../../src/index';
+import { OCAlertsProvider, OCAlert } from '../../../src/index';
 
 function AlertsView() {
   return (
@@ -33,7 +33,7 @@ function AlertsView() {
           }}
         >Error</Button>
       </ButtonToolbar>
-      <OCAlerts />
+      <OCAlertsProvider />
     </div>
   );
 }
