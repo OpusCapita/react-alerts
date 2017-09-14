@@ -1,7 +1,7 @@
 {
   "author": "OpusCapita (www.opuscapita.com)",
   "name": "@opuscapita/react-alerts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "description": "OpusCapita alerts",
   "main": "lib/react-alerts.js",
