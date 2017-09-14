@@ -24,7 +24,7 @@ class OCAlertComponent {
       id, 'success', message, translate, values));
     setTimeout(() => {
       this.store.dispatch(this.dismissAlert(id));
-    }, 3000);
+    }, 1500);
     return id;
   }
 
