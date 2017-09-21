@@ -19,13 +19,11 @@ npm install --save @opuscapita/react-alerts
 
 #### Development workflow
 * Run `npm run docs`
-
 * Open `docs/index.html`
 
   Or
 
 * Run `npm run hot`
-
 * Open `http://localhost:5555/`
 
 #### Contributing
@@ -34,6 +32,6 @@ npm install --save @opuscapita/react-alerts
 * Commit changes (not `lib`)
 * Make a pull request
 
-#### Creating a new release 
+#### Creating a new release
 * Run `npm version [major|minor|patch]` [Info](https://docs.npmjs.com/cli/version)
-* Run `npm publish` 
+* Run `npm publish`
