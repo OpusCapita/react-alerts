@@ -1,14 +1,10 @@
 Back to [alerts](../../README.md)
 
-# Alerts
+# Alerts API
 
 ### Description
 
-Alerts component to show global notifications to the user.
-
-### Dependencies
-
-None
+React alerts component to show global notifications.
 
 ### Initialization
 
