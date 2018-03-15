@@ -76,7 +76,7 @@
     "write-file-webpack-plugin": "^3.4.2"
   },
   "dependencies": {
-    "@opuscapita/react-icons": "2.0.0",
+    "@opuscapita/react-icons": "^2.0.3",
     "lodash": "4.17.4",
     "prop-types": "15.5.10",
     "react-bootstrap": "0.31.5",
