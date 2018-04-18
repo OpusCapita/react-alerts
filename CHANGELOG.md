@@ -2,6 +2,10 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
+## 2.1.0
+* Change redux state name from `alertsReducer` to `alerts`, change in your combineReducer if not using OCAlertsProvider style.
+* Fix react key when rendering Alerts
+
 ## 2.0.3
 * Update @opuscapita/react-icons
 

@@ -1,19 +1,16 @@
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable react/no-array-index-key */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { OCAlert } from './alert.component.jsx'; // eslint-disable-line import/extensions
+import { OCAlert } from './alert.component';
 
 import './alerts.scss';
-
 
 const OCAlertsComponent = function OCAlertsComponent(props) {
   return (
     <div id="global-notification">
-      { props.alerts.map((alert, i) =>
-        <OCAlert key={i} {...alert} />,
+      { props.alerts.map(alert =>
+        <OCAlert key={alert.id} {...alert} />,
       )}
     </div>
   );
@@ -36,7 +33,7 @@ OCAlertsComponent.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  alerts: state.alertsReducer,
+  alerts: state.alerts,
 });
 
 export const OCAlerts = connect(

@@ -18,7 +18,7 @@ describe('Alerts component', function describe() {
       intl: {
         locale: 'en',
       },
-      alertsReducer: [{
+      alerts: [{
         id: 'alert_1',
         type: 'success',
         message: 'my success',

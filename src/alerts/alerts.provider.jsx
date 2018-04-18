@@ -16,7 +16,7 @@ import './alerts.scss';
 
 const store = createStore(
   combineReducers({
-    alertsReducer,
+    alerts: alertsReducer,
     intl: intlReducer,
   }),
   compose(applyMiddleware(thunk)),
