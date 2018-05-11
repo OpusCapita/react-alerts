@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { OCAlert } from './alert.component.jsx'; // eslint-disable-line import/extensions
+import { OCAlert } from './alert.component'; // eslint-disable-line import/extensions
 
 import './alerts.scss';
 
