@@ -1,4 +1,4 @@
-export { OCAlert } from './alerts.actions.js';
-export { OCAlerts } from './alerts.component.jsx';
-export { alertsReducer } from './alerts.reducer.js';
+export { OCAlert } from './alerts.actions';
+export { OCAlerts } from './alerts.component';
+export { alertsReducer } from './alerts.reducer';
 export { OCAlertsProvider } from './alerts.provider';
