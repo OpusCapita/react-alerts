@@ -2,6 +2,9 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
+## next
+* Update react and react-dom packages
+
 ## 2.0.3
 * Update @opuscapita/react-icons
 
