@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable prefer-arrow-callback */
-
+/* eslint-disable no-unused-expressions, func-names */
 import { expect } from 'chai';
 import configureStore from 'redux-mock-store';
-
 import { OCAlert } from '../../src/index';
 
-
-describe('Alert component', function describe() {
+describe('Alert actions', () => {
   const middlewares = [];
   const mockStore = configureStore(middlewares);
 
@@ -20,67 +16,59 @@ describe('Alert component', function describe() {
     this.store.clearActions();
   });
 
-  it('send alertSuccess action', function it() {
-    OCAlert.alertSuccess('my success');
+  it('send alertSuccess action', function () {
+    const id = OCAlert.alertSuccess('my success');
 
     const expectedAction = {
-      id: 'alert_1',
+      id,
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'success',
       message: 'my success',
-      translate: false,
-      values: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
   });
 
-  it('send alertInfo action', function it() {
-    OCAlert.alertInfo('my info');
+  it('send alertInfo action', function () {
+    const id = OCAlert.alertInfo('my info');
 
     const expectedAction = {
-      id: 'alert_2',
+      id,
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'info',
       message: 'my info',
-      translate: false,
-      values: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
   });
 
-  it('send alertWarning action', function it() {
-    OCAlert.alertWarning('my warning');
+  it('send alertWarning action', function () {
+    const id = OCAlert.alertWarning('my warning');
 
     const expectedAction = {
-      id: 'alert_3',
+      id,
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'warning',
       message: 'my warning',
-      translate: false,
-      values: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
   });
 
-  it('send alertError action', function it() {
-    OCAlert.alertError('my error');
+  it('send alertError action', function () {
+    const id = OCAlert.alertError('my error');
 
     const expectedAction = {
-      id: 'alert_4',
+      id,
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'danger',
       message: 'my error',
-      translate: false,
-      values: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
   });
 
-  it('send closeAlert action', function it() {
+  it('send closeAlert action', function () {
     OCAlert.closeAlert('alert_1');
 
     const expectedAction = {
@@ -91,7 +79,7 @@ describe('Alert component', function describe() {
     expect(this.store.getActions()[0]).to.eql(expectedAction);
   });
 
-  it('send closeAlerts action', function it() {
+  it('send closeAlerts action', function () {
     OCAlert.closeAlerts();
 
     const expectedAction = {

@@ -1,46 +1,37 @@
 /* eslint-disable no-unused-expressions */
-/* eslint-disable prefer-arrow-callback */
-
 import { expect } from 'chai';
-
+import { List, Map } from 'immutable';
 import { alertsReducer } from '../../src/index';
 import { TYPES } from '../../src/alerts/alerts.actions';
 
-
-describe('alertsReducer', function describe() {
-  it('should handle show action', function it() {
+describe('Alerts reducer', () => {
+  it('should handle show action', () => {
     const action = {
       id: 'alert_1',
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: 'success',
       message: 'my success',
-      translate: false,
-      values: null,
     };
 
-    let newState = alertsReducer([], action);
+    let newState = alertsReducer(List(), action);
 
-    expect(newState).to.eql([{
+    expect(newState.get(0)).to.eql(Map({
       id: 'alert_1',
       type: 'success',
       message: 'my success',
-      translate: false,
-      values: null,
-    }]);
+    }));
 
     newState = alertsReducer(newState, action);
-    expect(newState.length).to.eql(2);
+    expect(newState.size).to.eql(2);
   });
 
-  it('should handle dismiss alert action', function it() {
-    const initialState = [{
+  it('should handle dismiss alert action', () => {
+    const initialState = List([Map({
       id: 'alert_1',
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: 'success',
       message: 'my success',
-      translate: false,
-      values: null,
-    }];
+    })]);
 
     const action = {
       type: TYPES.PLATFORM_ALERTS_DISMISS_ALERT,
@@ -48,31 +39,27 @@ describe('alertsReducer', function describe() {
     };
 
     const newState = alertsReducer(initialState, action);
-    expect(newState.length).to.eql(0);
+    expect(newState.size).to.eql(0);
   });
 
-  it('should handle dismiss all alerts action', function it() {
-    const initialState = [{
+  it('should handle dismiss all alerts action', () => {
+    const initialState = List([Map({
       id: 'alert_1',
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: 'success',
       message: 'my success',
-      translate: false,
-      values: null,
-    }, {
+    }), Map({
       id: 'alert_2',
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: 'success',
       message: 'my success',
-      translate: false,
-      values: null,
-    }];
+    })]);
 
     const action = {
       type: TYPES.PLATFORM_ALERTS_DISMISS_ALL,
     };
 
     const newState = alertsReducer(initialState, action);
-    expect(newState.length).to.eql(0);
+    expect(newState.size).to.eql(0);
   });
 });
