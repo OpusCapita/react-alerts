@@ -9,7 +9,7 @@ npm install @opuscapita/react-alerts
 ```
 
 ### Demo
-View the [DEMO](https://opuscapita.github.io/react-component-template)
+View the [DEMO](https://opuscapita.github.io/react-alerts)
 
 ### Builds
 #### UMD
