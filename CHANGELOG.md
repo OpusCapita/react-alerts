@@ -5,7 +5,7 @@
 ## <next>
 
 ## 3.0.0
-* Upgrade to new react-component-layout
+* Upgrade to new react-component-template
 * Remove `react-intl` dependency
 * Add support for react component as message
 * Change alert actions parameters so that first is the message, second is options object
