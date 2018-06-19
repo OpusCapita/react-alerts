@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 3.0.0
 * Upgrade to new react-component-layout
 * Remove `react-intl` dependency
 * Add support for react component as message
