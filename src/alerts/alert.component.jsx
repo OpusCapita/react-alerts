@@ -1,47 +1,19 @@
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable react/no-array-index-key */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert } from 'react-bootstrap';
-import { FormattedMessage as M } from 'react-intl';
+import { Alert as BSAlert } from 'react-bootstrap';
 import { Icon } from '@opuscapita/react-icons';
-import { OCAlert as alertAction } from './alerts.actions';
+import { OCAlert as OCAlertActions } from './alerts.actions';
 
-
-export class OCAlert extends React.Component {
-
-  getMessage() {
-    const elements = [];
-    if (typeof this.props.message === 'object') {
-      if (this.props.translate) {
-        this.props.message.map((item, i) => {
-          elements.push(
-            <div key={i}><M id={item} /></div>,
-          );
-          return elements;
-        });
-      } else {
-        this.props.message.map((item, i) => {
-          elements.push(
-            <div key={i}>{item}</div>,
-          );
-          return elements;
-        });
-      }
-    } else if (this.props.translate) {
-      elements.push(
-        <M
-          key={this.props.id}
-          id={this.props.message}
-          values={this.props.values || {}}
-        />,
-      );
-    } else {
-      return this.props.message;
-    }
-    return elements;
-  }
+export class OCAlert extends React.PureComponent {
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['success', 'info', 'warning', 'danger']).isRequired,
+    message: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).isRequired,
+  };
 
   getIcon() {
     const names = {
@@ -61,34 +33,16 @@ export class OCAlert extends React.Component {
   }
 
   handleAlertDismiss = () => {
-    alertAction.closeAlert(this.props.id);
+    OCAlertActions.closeAlert(this.props.id);
   }
 
   render() {
     return (
-      <Alert bsStyle={this.props.type} onDismiss={this.handleAlertDismiss}>
+      <BSAlert bsStyle={this.props.type} onDismiss={this.handleAlertDismiss}>
         <div className="alert-content">
           { this.getIcon() }
-          <span>{this.getMessage()}</span>
+          <span>{ this.props.message }</span>
         </div>
-      </Alert>);
+      </BSAlert>);
   }
 }
-
-OCAlert.defaultProps = {
-  values: {},
-};
-
-OCAlert.propTypes = {
-  id: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['success', 'info', 'warning', 'danger']).isRequired,
-  message: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-  ]).isRequired,
-  translate: PropTypes.bool.isRequired,
-  values: PropTypes.objectOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ])),
-};

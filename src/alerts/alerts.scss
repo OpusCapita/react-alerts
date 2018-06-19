@@ -1,13 +1,12 @@
-@import 'colors';
-
+@import '~@opuscapita/oc-cm-common-styles/styles/colors';
 
 #global-notification {
-    position:absolute;
+    position: absolute;
     z-index: 10000;
-    bottom: 15%;
+    bottom: 5px;
     width: 100%;
-    left:50%;
-    transform: translate3d(-50%,0,0);
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
     max-width: 650px;
 
     .cover {
@@ -62,6 +61,7 @@
             line-height: 24px;
             opacity: 0.6;
             text-shadow:none;
+            user-select: none;
             &:hover {
                 opacity: 1;
             }

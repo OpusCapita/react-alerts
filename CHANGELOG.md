@@ -2,6 +2,15 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
+## <next>
+* Upgrade to new react-component-layout
+* Remove `react-intl` dependency
+* Add support for react component as message
+* Change alert actions parameters so that first is the message, second is options object
+* Customizable container styles
+* Use immutables
+* Replace non-unique lodash id to uuid
+
 ## 2.0.3
 * Update react and react-dom packages
 

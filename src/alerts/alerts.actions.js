@@ -1,6 +1,5 @@
 /* eslint-disable class-methods-use-this */
-
-import { uniqueId } from 'lodash';
+import uuidv1 from 'uuid/v1';
 
 export const TYPES = {
   PLATFORM_ALERTS_SHOW: 'PLATFORM_ALERTS_SHOW',
@@ -8,87 +7,70 @@ export const TYPES = {
   PLATFORM_ALERTS_DISMISS_ALL: 'PLATFORM_ALERTS_DISMISS_ALL',
 };
 
-class OCAlertComponent {
+const DEFAULT_TIMEOUT = 1500;
 
+const getId = () => uuidv1();
+
+class OCAlertComponent {
   constructor() {
     this.store = undefined;
   }
 
-  setStore(store) {
+  setStore = (store) => {
     this.store = store;
   }
 
-  alertSuccess(message, translate = false, values = null) {
-    const id = this.getId();
-    this.store.dispatch(this.showAlert(
-      id, 'success', message, translate, values));
-    setTimeout(() => {
-      this.store.dispatch(this.dismissAlert(id));
-    }, 1500);
+  alertSuccess =(message, options = {}) => {
+    const id = getId();
+    const opts = Object.assign({}, { timeOut: DEFAULT_TIMEOUT }, options);
+    this.showAlert(id, 'success', message, opts);
     return id;
   }
 
-  alertInfo(message, timeout = null, translate = false, values = null) {
-    const id = this.getId();
-    this.store.dispatch(this.showAlert(
-      id, 'info', message, translate, values));
-    if (timeout) {
-      setTimeout(() => {
-        this.store.dispatch(this.dismissAlert(id));
-      }, timeout * 1000);
-    }
+  alertInfo = (message, options = {}) => {
+    const id = getId();
+    const opts = Object.assign({}, { timeOut: DEFAULT_TIMEOUT }, options);
+    this.showAlert(id, 'info', message, opts);
     return id;
   }
 
-  alertWarning(message, translate = false, values = null) {
-    const id = this.getId();
-    this.store.dispatch(this.showAlert(
-      id, 'warning', message, translate, values));
+  alertWarning = (message, options = {}) => {
+    const id = getId();
+    const opts = Object.assign({}, options);
+    this.showAlert(id, 'warning', message, opts);
     return id;
   }
 
-  alertError(message, translate = false, values = null) {
-    const id = this.getId();
-    this.store.dispatch(this.showAlert(
-      id, 'danger', message, translate, values));
+  alertError = (message, options = {}) => {
+    const id = getId();
+    const opts = Object.assign({}, options);
+    this.showAlert(id, 'danger', message, opts);
     return id;
   }
 
-  closeAlert(id) {
-    this.store.dispatch(this.dismissAlert(id));
+  closeAlert = (id) => {
+    this.store.dispatch({
+      id,
+      type: TYPES.PLATFORM_ALERTS_DISMISS_ALERT,
+    });
   }
 
-  closeAlerts() {
-    this.store.dispatch(this.dismissAllAlerts());
+  closeAlerts = () => {
+    this.store.dispatch({
+      type: TYPES.PLATFORM_ALERTS_DISMISS_ALL,
+    });
   }
 
-  showAlert(id, type, message, translate,
-    values = null) {
-    return {
+  showAlert = (id, type, message, options) => {
+    this.store.dispatch({
       id,
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: type,
       message,
-      translate,
-      values,
-    };
-  }
-
-  dismissAlert(id) {
-    return {
-      id,
-      type: TYPES.PLATFORM_ALERTS_DISMISS_ALERT,
-    };
-  }
-
-  dismissAllAlerts() {
-    return {
-      type: TYPES.PLATFORM_ALERTS_DISMISS_ALL,
-    };
-  }
-
-  getId() {
-    return uniqueId('alert_');
+    });
+    if (options.timeOut) {
+      setTimeout(() => this.closeAlert(id), options.timeOut);
+    }
   }
 }
 

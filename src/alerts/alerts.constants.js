@@ -1,5 +1,7 @@
+import { List } from 'immutable';
+
 const INITIAL_STATE = {
-  alerts: [],
+  alerts: List(),
 };
 
 export default INITIAL_STATE;
