@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Minor style fixes
 
 ## 3.0.0
 * Upgrade to new react-component-template

@@ -8,7 +8,14 @@ export default class ComponentView extends React.PureComponent {
     this.state = {};
   }
 
+
   render() {
+    const msgs = {
+      info: 'Alert info!',
+      success: 'Alert success! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel posuere sapien.',
+      warning: 'Alert warning! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel posuere sapien. Sed quis sagittis lorem. Proin eget ultrices orci. Quisque tincidunt mattis magna, vel vehicula elit congue sed.',
+error:'lol'
+    };
     return (
       <div style={{ padding: '20px' }}>
         <h1>Alerts</h1>
@@ -22,7 +29,7 @@ export default class ComponentView extends React.PureComponent {
           <Button
             bsStyle="info"
             onClick={() => {
-              OCAlert.alertInfo(<span>This is the info text.</span>);
+              OCAlert.alertInfo(<span>{msgs.info}</span>);
             }}
           >
             Info
@@ -30,7 +37,7 @@ export default class ComponentView extends React.PureComponent {
           <Button
             bsStyle="success"
             onClick={() => {
-              OCAlert.alertSuccess('alert success!');
+              OCAlert.alertSuccess(msgs.success);
             }}
           >
             Success
@@ -38,7 +45,7 @@ export default class ComponentView extends React.PureComponent {
           <Button
             bsStyle="warning"
             onClick={() => {
-              OCAlert.alertWarning('alert warning!');
+              OCAlert.alertWarning(msgs.warning);
             }}
           >
             Warning
@@ -46,7 +53,7 @@ export default class ComponentView extends React.PureComponent {
           <Button
             bsStyle="danger"
             onClick={() => {
-              OCAlert.alertError('alert error!');
+              OCAlert.alertError(msgs.error);
             }}
           >
             Error
