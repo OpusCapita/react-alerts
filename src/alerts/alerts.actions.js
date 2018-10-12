@@ -18,13 +18,15 @@ class OCAlertComponent {
     this.store = store;
   }
 
-  alertSuccess(message, translate = false, values = null) {
+  alertSuccess(message, translate = false, values = null, timeout = 2000) {
     const id = this.getId();
     this.store.dispatch(this.showAlert(
       id, 'success', message, translate, values));
-    setTimeout(() => {
-      this.store.dispatch(this.dismissAlert(id));
-    }, 1500);
+    if (timeout) {
+      setTimeout(() => {
+        this.store.dispatch(this.dismissAlert(id));
+      }, timeout);
+    }
     return id;
   }
 
@@ -63,7 +65,7 @@ class OCAlertComponent {
   }
 
   showAlert(id, type, message, translate,
-    values = null) {
+            values = null) {
     return {
       id,
       type: TYPES.PLATFORM_ALERTS_SHOW,

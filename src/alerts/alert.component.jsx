@@ -62,14 +62,18 @@ export class OCAlert extends React.Component {
 
   handleAlertDismiss = () => {
     alertAction.closeAlert(this.props.id);
-  }
+  };
 
   render() {
     return (
       <Alert bsStyle={this.props.type} onDismiss={this.handleAlertDismiss}>
         <div className="alert-content">
-          { this.getIcon() }
-          <span>{this.getMessage()}</span>
+          <div className="alert-icon-container">
+            {this.getIcon()}
+          </div>
+          <div className="alert-message">
+            <span>{this.getMessage()}</span>
+          </div>
         </div>
       </Alert>);
   }
