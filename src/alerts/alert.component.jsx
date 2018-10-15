@@ -34,14 +34,14 @@ export class OCAlert extends React.PureComponent {
 
   handleAlertDismiss = () => {
     OCAlertActions.closeAlert(this.props.id);
-  }
+  };
 
   render() {
     return (
       <Alert bsStyle={this.props.type} onDismiss={this.handleAlertDismiss}>
         <div className="alert-content">
-          { this.getIcon() }
-          <span>{ this.props.message }</span>
+          <div className="alert-icon-container">{this.getIcon()}</div>
+          <div className="alert-message-container">{this.props.message}</div>
         </div>
       </Alert>);
   }
