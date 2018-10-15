@@ -14,7 +14,7 @@ export default class ComponentView extends React.PureComponent {
       info: 'Alert info!',
       success: 'Alert success! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel posuere sapien.',
       warning: 'Alert warning! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel posuere sapien. Sed quis sagittis lorem. Proin eget ultrices orci. Quisque tincidunt mattis magna, vel vehicula elit congue sed.',
-      error: 'Alert error! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel posuere sapien. Sed quis sagittis lorem. Proin eget ultrices orci. Quisque tincidunt mattis magna, vel vehicula elit congue sed. Aenean interdum, quam vel molestie tempor, purus erat porttitor nulla, eget accumsan risus lectus sit amet tortor.'
+      error: 'Alert error! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel posuere sapien. Sed quis sagittis lorem. Proin eget ultrices orci. Quisque tincidunt mattis magna, vel vehicula elit congue sed. Aenean interdum, quam vel molestie tempor, purus erat porttitor nulla, eget accumsan risus lectus sit amet tortor.',
     };
     return (
       <div style={{ padding: '20px' }}>
