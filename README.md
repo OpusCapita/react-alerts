@@ -47,7 +47,7 @@ Also you need to configure sass loader, since all the styles are in sass format.
 | timeOut    | Time in milliseconds in which the alert is closed automatically. |
 
 ### Code example
-#### Simple usage with built-in redux store
+#### Simple usage with built-in Redux store
 Include the `OCAlertsProvider` component somewhere in your main component once.
 ```jsx
 import { OCAlertsProvider } from '@opuscapita/react-alerts';
@@ -72,4 +72,38 @@ OCAlert.alertInfo('Alert will disappear in 3 seconds', { timeOut: 3000 });
 
 OCAlert.closeAlert(id);
 OCAlert.closeAlerts();
+```
+
+#### Usage with your own Redux store
+Instead of using react-alerts' built-in Redux store, you can also use your own store. Like this:
+
+```javascript
+import { OCAlert } from '@opuscapita/react-alerts';
+OCAlert.setStore(yourStore)
+```
+
+After this you need to include OCAlerts component somewhere in your application (Note that we're 
+not using the OCAlertsProvider like we did in the previous example)
+
+```javascript
+import { OCAlerts } from '@opuscapita/react-alerts';
+
+// ...
+
+<div className="my-react-application">
+  {this.props.children}
+  <OCAlerts />
+</div>
+```
+
+And lastly, you need to import and initialize the alertsReducer:
+
+```javascript
+import { alertsReducer } from '@opuscapita/react-alerts';
+import { combineReducers } from 'redux';
+
+const combinedReducers = {
+  // your reducers
+  alerts: alertsReducer,
+}
 ```

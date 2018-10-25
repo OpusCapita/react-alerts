@@ -77,7 +77,8 @@
       flex-direction: row;
       align-items: center;
       .alert-icon-container {
-        width: $icon-width;
+        max-width: $icon-width;
+        min-width: $icon-width;
         margin-right: $padding-width;
         svg {
           margin-top: $bottom-bar-width;
