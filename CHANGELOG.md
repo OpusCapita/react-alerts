@@ -1,6 +1,8 @@
 # Changelog
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
+## <next>
+* Internet Explorer related style fix
 
 ## 3.0.1
 * Minor style fixes
