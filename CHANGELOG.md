@@ -2,6 +2,8 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## <next>
+
+## 3.0.2
 * Internet Explorer related style fix
 
 ## 3.0.1
