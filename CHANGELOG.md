@@ -3,6 +3,11 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## <next>
 
+## 3.0.3
+* Change `div.alert-message-container` to `span.alert-message-container` for test compability
+* Move `OCAlertsProvider` store creation to constructor to avoid unnecessary store creation
+* Upgrade npm packages
+
 ## 3.0.2
 * Internet Explorer related style fix
 

@@ -15,17 +15,6 @@ import { OCAlerts } from './alerts.component';
 
 import './alerts.scss';
 
-const composeEnhancers = composeWithDevTools({ name: 'OCAlerts' });
-const store = createStore(
-  combineReducers({
-    alerts: alertsReducer,
-  }),
-  undefined,
-  composeEnhancers(applyMiddleware(thunk)),
-);
-
-OCAlert.setStore(store);
-
 export class OCAlertsProvider extends React.PureComponent {
   static propTypes = {
     containerStyle: PropTypes.object, // eslint-disable-line
@@ -35,9 +24,24 @@ export class OCAlertsProvider extends React.PureComponent {
     containerStyle: {},
   }
 
+  constructor(props) {
+    super(props);
+    const composeEnhancers = composeWithDevTools({ name: 'OCAlerts' });
+    if (!this.store) {
+      this.store = createStore(
+        combineReducers({
+          alerts: alertsReducer,
+        }),
+        undefined,
+        composeEnhancers(applyMiddleware(thunk)),
+      );
+    }
+    OCAlert.setStore(this.store);
+  }
+
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={this.store}>
         <OCAlerts containerStyle={this.props.containerStyle} />
       </Provider>
     );

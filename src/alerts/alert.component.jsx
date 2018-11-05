@@ -41,7 +41,9 @@ export class OCAlert extends React.PureComponent {
       <Alert bsStyle={this.props.type} onDismiss={this.handleAlertDismiss}>
         <div className="alert-content">
           <div className="alert-icon-container">{this.getIcon()}</div>
-          <div className="alert-message-container">{this.props.message}</div>
+          <span className="alert-message-container">
+            {this.props.message}
+          </span>
         </div>
       </Alert>);
   }
