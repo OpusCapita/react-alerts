@@ -4,7 +4,7 @@
   position: absolute;
   z-index: 10000;
   bottom: 5px;
-  width: 100%;
+  width: 90%;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   max-width: 650px;
@@ -26,7 +26,7 @@
 
   .alert {
 
-    $padding-width: 15px;
+    $padding-width: 5px;
     $icon-width: 38px;
     $bottom-bar-width: 6px;
 
@@ -48,7 +48,7 @@
     }
 
     &.alert-info {
-      border-color: $oc-color-info;
+      border-color: $oc-color-azure;
     }
 
     &.alert-warning {
@@ -60,8 +60,8 @@
     }
 
     .close {
-      font-size: 34px;
-      font-weight: 300;
+      font-size: 26px;
+      font-weight: normal;
       line-height: 24px;
       opacity: 0.6;
       align-self: flex-start;
@@ -82,6 +82,9 @@
         margin-right: $padding-width;
         svg {
           margin-top: $bottom-bar-width;
+          .oc-icon-product {
+            fill: $oc-color-azure;
+          }
         }
       }
     }
