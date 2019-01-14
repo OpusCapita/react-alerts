@@ -5,6 +5,7 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const flexbugs = require('postcss-flexbugs-fixes');
+const packageInfo = require('./package.json');
 
 const libraryName = 'react-alerts';
 
@@ -181,7 +182,10 @@ const devConfig = {
         NODE_ENV: JSON.stringify('development'),
       },
     }),
-    new WebpackNotifierPlugin(),
+    new WebpackNotifierPlugin({
+      title: packageInfo.name,
+      contentImage: path.join(__dirname, 'src_docs', 'images', 'favicon.ico'),
+    }),
     new webpack.NamedModulesPlugin(),
   ],
 };

@@ -16,19 +16,43 @@ export class OCAlert extends React.PureComponent {
   };
 
   getIcon() {
-    const names = {
-      success: 'ok',
-      info: 'exclamation',
-      warning: 'alert',
-      danger: 'error',
+    const icons = {
+      success: {
+        type: 'indicator',
+        name: 'ok',
+        width: 16,
+        height: 16,
+        style: {
+          marginLeft: '10px',
+        },
+      },
+      info: {
+        type: 'product',
+        name: 'Info',
+        width: 30,
+        height: 30,
+      },
+      warning: {
+        type: 'indicator',
+        name: 'warning',
+        width: 25,
+        height: 25,
+        style: {
+          marginLeft: '5px',
+        },
+      },
+      danger: {
+        type: 'indicator',
+        name: 'error',
+        width: 25,
+        height: 25,
+        style: {
+          marginLeft: '5px',
+        },
+      },
     };
     return (
-      <Icon
-        type="indicator"
-        name={names[this.props.type]}
-        width={38}
-        height={38}
-      />
+      <Icon {...icons[this.props.type]} />
     );
   }
 

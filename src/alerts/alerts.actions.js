@@ -7,7 +7,7 @@ export const TYPES = {
   PLATFORM_ALERTS_DISMISS_ALL: 'PLATFORM_ALERTS_DISMISS_ALL',
 };
 
-const DEFAULT_TIMEOUT = 1500;
+const DEFAULT_TIMEOUT = 3000;
 
 const getId = () => uuidv1();
 
