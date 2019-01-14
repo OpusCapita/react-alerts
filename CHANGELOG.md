@@ -3,6 +3,11 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## <next>
 
+## 3.0.5
+* Fix styles according to latest ui specs
+* Add left and right margin on small screens
+* Increase default timeout from 1.5 seconds to 3 seconds
+
 ## 3.0.4
 * Upgrade all packages that can be upgraded
 
