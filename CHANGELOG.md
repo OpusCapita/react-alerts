@@ -2,6 +2,7 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## <next>
+* Added Storybook implementation
 
 ## 3.0.5
 * Fix styles according to latest ui specs
