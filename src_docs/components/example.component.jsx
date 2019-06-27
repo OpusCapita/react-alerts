@@ -58,6 +58,30 @@ export default class ComponentView extends React.PureComponent {
           >
             Error
           </Button>
+          <Button
+            bsStyle="danger"
+            onClick={() => {
+              OCAlert.alertError([
+                <span>{msgs.success}</span>,
+                <span>{msgs.info}</span>,
+                <span>{msgs.error}</span>,
+              ]);
+            }}
+          >
+            Array of JSX objects
+          </Button>
+          <Button
+            bsStyle="danger"
+            onClick={() => {
+              OCAlert.alertError([
+                msgs.success,
+                msgs.info,
+                msgs.error,
+              ]);
+            }}
+          >
+            Array of strings
+          </Button>
         </ButtonToolbar>
       </div>
     );

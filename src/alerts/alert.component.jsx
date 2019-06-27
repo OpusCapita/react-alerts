@@ -66,7 +66,20 @@ export class OCAlert extends React.PureComponent {
         <div className="alert-content">
           <div className="alert-icon-container">{this.getIcon()}</div>
           <span className="alert-message-container">
-            {this.props.message}
+            { Array.isArray(this.props.message)
+              ? this.props.message.map((m) => {
+                  if (typeof m === 'string') {
+                    return `${m}\n`;
+                  }
+                  return (
+                    <React.Fragment>
+                      {m}
+                      <br />
+                    </React.Fragment>
+                  );
+                })
+              : this.props.message
+            }
           </span>
         </div>
       </Alert>);
