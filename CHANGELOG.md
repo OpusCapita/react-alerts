@@ -2,6 +2,7 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## <next>
+* Fixed: Array of messages line breaks
 * Added Storybook implementation
 
 ## 3.0.5
