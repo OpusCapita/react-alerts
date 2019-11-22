@@ -4,7 +4,7 @@
 ## <next>
 
 ## 3.0.7
-* Added option prop onDismiss
+* Added optional callback onDismiss
 
 ## 3.0.6
 * Fixed: Array of messages line breaks
