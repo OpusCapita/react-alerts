@@ -20,6 +20,7 @@ export class OCAlerts extends React.PureComponent {
         PropTypes.string,
         PropTypes.node,
       ]).isRequired,
+      onDismiss: PropTypes.func,
     })).isRequired,
     containerStyle: PropTypes.object, // eslint-disable-line
   }
@@ -37,6 +38,7 @@ export class OCAlerts extends React.PureComponent {
             id={alert.get('id')}
             type={alert.get('type')}
             message={alert.get('message')}
+            onDismiss={alert.get('onDismiss')}
           />
         )) }
       </div>

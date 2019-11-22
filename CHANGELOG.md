@@ -3,6 +3,9 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## <next>
 
+## 3.0.7
+* Added option prop onDismiss
+
 ## 3.0.6
 * Fixed: Array of messages line breaks
 * Added Storybook implementation

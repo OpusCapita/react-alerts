@@ -32,14 +32,14 @@ Also you need to configure sass loader, since all the styles are in sass format.
 | containerStyle | object | { bottom: '5px', maxWidth: '650px' } | Override container default CSS styles |
 
 #### OCAlert
-| Function     | Parameters       | Returns          | Description             |
-| ------------ | ---------------- | ---------------- | ----------------------- |
-| alertSuccess | message, options | Alert Id: number | Show success alert      |
-| alertInfo    | message, options | Alert Id: number | Show info alert         |
-| alertWarning | message, options | Alert Id: number | Show warning alert      |
-| alertError   | message, options | Alert Id: number | Show error alert        |
-| closeAlert   | id               |                  | Close one alert with id |
-| closeAlerts  |                  |                  | Close all alerts        |
+| Function     | Parameters                  | Returns          | Description             |
+| ------------ | --------------------------- | ---------------- | ----------------------- |
+| alertSuccess | message, options, onDismiss | Alert Id: number | Show success alert      |
+| alertInfo    | message, options, onDismiss | Alert Id: number | Show info alert         |
+| alertWarning | message, options, onDismiss | Alert Id: number | Show warning alert      |
+| alertError   | message, options, onDismiss | Alert Id: number | Show error alert        |
+| closeAlert   | id                          |                  | Close one alert with id |
+| closeAlerts  |                             |                  | Close all alerts        |
 
 #### Options
 | Attributes | Description                                                      |

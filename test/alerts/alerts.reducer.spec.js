@@ -11,6 +11,7 @@ describe('Alerts reducer', () => {
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: 'success',
       message: 'my success',
+      onDismiss: null,
     };
 
     let newState = alertsReducer(List(), action);
@@ -19,6 +20,7 @@ describe('Alerts reducer', () => {
       id: 'alert_1',
       type: 'success',
       message: 'my success',
+      onDismiss: null,
     }));
 
     newState = alertsReducer(newState, action);
@@ -48,11 +50,13 @@ describe('Alerts reducer', () => {
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: 'success',
       message: 'my success',
+      onDismiss: null,
     }), Map({
       id: 'alert_2',
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: 'success',
       message: 'my success',
+      onDismiss: null,
     })]);
 
     const action = {

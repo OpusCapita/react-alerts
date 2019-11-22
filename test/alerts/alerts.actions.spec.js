@@ -24,6 +24,7 @@ describe('Alert actions', () => {
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'success',
       message: 'my success',
+      onDismiss: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
@@ -37,6 +38,7 @@ describe('Alert actions', () => {
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'info',
       message: 'my info',
+      onDismiss: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
@@ -50,6 +52,7 @@ describe('Alert actions', () => {
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'warning',
       message: 'my warning',
+      onDismiss: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
@@ -63,6 +66,7 @@ describe('Alert actions', () => {
       type: 'PLATFORM_ALERTS_SHOW',
       alertType: 'danger',
       message: 'my error',
+      onDismiss: null,
     };
 
     expect(this.store.getActions()[0]).to.eql(expectedAction);
