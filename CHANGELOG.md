@@ -3,7 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 ## <next>
 
-## 3.0.7
+## 3.1.0
 * Added optional callback onDismiss
 
 ## 3.0.6
