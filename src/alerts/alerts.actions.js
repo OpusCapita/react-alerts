@@ -20,31 +20,31 @@ class OCAlertComponent {
     this.store = store;
   };
 
-  alertSuccess = (message, options = {}) => {
+  alertSuccess = (message, options = {}, onDismiss = null) => {
     const id = getId();
     const opts = Object.assign({}, { timeOut: DEFAULT_TIMEOUT }, options);
-    this.showAlert(id, 'success', message, opts);
+    this.showAlert(id, 'success', message, opts, onDismiss);
     return id;
   };
 
-  alertInfo = (message, options = {}) => {
+  alertInfo = (message, options = {}, onDismiss = null) => {
     const id = getId();
     const opts = Object.assign({}, { timeOut: DEFAULT_TIMEOUT }, options);
-    this.showAlert(id, 'info', message, opts);
+    this.showAlert(id, 'info', message, opts, onDismiss);
     return id;
   };
 
-  alertWarning = (message, options = {}) => {
+  alertWarning = (message, options = {}, onDismiss = null) => {
     const id = getId();
     const opts = Object.assign({}, options);
-    this.showAlert(id, 'warning', message, opts);
+    this.showAlert(id, 'warning', message, opts, onDismiss);
     return id;
   };
 
-  alertError = (message, options = {}) => {
+  alertError = (message, options = {}, onDismiss = null) => {
     const id = getId();
     const opts = Object.assign({}, options);
-    this.showAlert(id, 'danger', message, opts);
+    this.showAlert(id, 'danger', message, opts, onDismiss);
     return id;
   };
 
@@ -61,12 +61,13 @@ class OCAlertComponent {
     });
   };
 
-  showAlert = (id, type, message, options) => {
+  showAlert = (id, type, message, options, onDismiss = null) => {
     this.store.dispatch({
       id,
+      message,
+      onDismiss,
       type: TYPES.PLATFORM_ALERTS_SHOW,
       alertType: type,
-      message,
     });
     if (options.timeOut) {
       setTimeout(() => this.closeAlert(id), options.timeOut);

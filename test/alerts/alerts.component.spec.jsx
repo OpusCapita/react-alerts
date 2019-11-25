@@ -18,6 +18,7 @@ describe('Alerts component', () => {
         id: 'alert_1',
         type: 'success',
         message: 'my success',
+        onDismiss: null,
       })]),
     });
   });
@@ -29,6 +30,7 @@ describe('Alerts component', () => {
       id: 'alert_1',
       type: 'success',
       message: 'my success',
+      onDismiss: null,
     });
   });
 });

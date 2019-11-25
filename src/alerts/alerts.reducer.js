@@ -10,6 +10,7 @@ export function alertsReducer(state = INITIAL_STATE.alerts, action) {
         id: action.id,
         type: action.alertType,
         message: action.message,
+        onDismiss: action.onDismiss,
       }));
     }
     case TYPES.PLATFORM_ALERTS_DISMISS_ALERT: {

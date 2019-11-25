@@ -13,7 +13,12 @@ export class OCAlert extends React.PureComponent {
       PropTypes.string,
       PropTypes.node,
     ]).isRequired,
+    onDismiss: PropTypes.func,
   };
+
+  static defaultProps = {
+    onDismiss: null,
+  }
 
   getIcon() {
     const icons = {
@@ -58,6 +63,9 @@ export class OCAlert extends React.PureComponent {
 
   handleAlertDismiss = () => {
     OCAlertActions.closeAlert(this.props.id);
+    if (this.props.onDismiss) {
+      this.props.onDismiss();
+    }
   };
 
   render() {
